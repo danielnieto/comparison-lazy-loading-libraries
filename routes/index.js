@@ -3,7 +3,7 @@ var router = express.Router();
 
 var offset = 200;
 var images = generateArrayOfImages(500)
-var methods = ['none', 'native', 'lozad', 'lazyload', 'lazysizes']
+var methods = ['blank-page-for-control', 'none', 'native', 'lozad', 'lazyload', 'lazysizes']
 
 function generateArrayOfImages(count) {
   const result = [];
