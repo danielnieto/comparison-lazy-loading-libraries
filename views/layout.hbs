@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  {{#if showInfo}}
+  <div id="info-widget">
+    <p><strong>Technique:</strong> {{info}}</p>
+    <p><strong>Loaded:</strong> <span id='info-widget_count'>0</span>/{{images.length}}</p>
+  </div>
+  {{/if}}
+  {{{body}}}
+</body>
+<script>
+  const infoWidgetCount = document.querySelector('#info-widget_count');
+  let loadCount = 0;
+
+  function onLoad(event) {
+    infoWidgetCount.innerHTML = ++loadCount;
+  }
+
+  document.querySelectorAll('img').forEach((img) => {
+    img.addEventListener('load', onLoad);
+    img.addEventListener('error', onLoad);
+  });
+</script>
+
+</html>

@@ -1,0 +1,23 @@
+<xmp>
+    <script src="javascripts/lazyload.min.js"></script>
+    <img data-src="path/to/image.jpg" width="1000" height="1000" class="lazy" />
+    <script>
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+    </script>
+
+</xmp>
+
+{{#each images}}
+<img data-src="{{this}}" width="1000" height="1000" class="lazy" />
+{{/each}}
+
+
+<script src="javascripts/lazyload.min.js"></script>
+<script>
+    var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+</script>
+
